@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *  @category    Magebase
+ *  @package     Magebase_Deliverydate
+ *  @author      Tom Lin <tom@lero9.co.nz>
+ *  @copyright   Copyright (c) 2016 Magebase. (http://magebase.com)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="magebase_sales_email_order_template" label="Magebase New Order" file="Magebase_order_new.html" type="html" module="Magebase_Deliverydate" area="frontend"/>
+    <template id="magebase_sales_email_order_guest_template" label="Magebase New Order for Guest" file="magebase_order_new_guest.html" type="html" module="Magento_Sales" area="frontend"/>
+    <template id="magebase_sales_email_invoice_template" label="Magebase New Invoice" file="magebase_invoice_new.html" type="html" module="Magento_Sales" area="frontend"/>
+    <template id="magebase_sales_email_invoice_guest_template" label="Magebase New Invoice for Guest" file="magebase_invoice_new_guest.html" type="html" module="Magento_Sales" area="frontend"/>
+    <template id="magebase_sales_email_creditmemo_template" label="Magebase New Credit Memo" file="magebase_creditmemo_new.html" type="html" module="Magento_Sales" area="frontend"/>
+    <template id="magebase_sales_email_creditmemo_guest_template" label="Magebase New Credit Memo for Guest" file="magebase_creditmemo_new_guest.html" type="html" module="Magento_Sales" area="frontend"/>
+    <template id="magebase_sales_email_shipment_template" label="Magebase New Shipment" file="magebase_shipment_new.html" type="html" module="Magento_Sales" area="frontend"/>
+    <template id="magebase_sales_email_shipment_guest_template" label="Magebase New Shipment for Guest" file="magebase_shipment_new_guest.html" type="html" module="Magento_Sales" area="frontend"/>
+</config>

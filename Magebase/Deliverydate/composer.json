@@ -1,0 +1,29 @@
+{
+    "name": "magebase/delivery-date",
+    "description": "This extension enables us to add delivery date to checkout page. It is ported from the old one for Magento 1.",
+    "type": "magento2-module",
+    "version": "2.0.0",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],
+    "require": {
+        "php": "~5.5.0|~5.6.0|~7.0.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magebase\\CheckoutFeedback\\": ""
+        }
+    },
+    "extra": {
+        "map": [
+            [
+                "*",
+                "Magebase/Deliverydate"
+            ]
+        ]
+    }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--add delivery date to quote -->
+    <type name="Magento\Checkout\Model\ShippingInformationManagement">
+        <plugin name="save-in-quote" type="Magebase\Deliverydate\Model\Checkout\ShippingInformationManagementPlugin" sortOrder="10" />
+    </type>
+    <!--add delivery date to order grid table-->
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="delivery_date" xsi:type="string">sales_order.delivery_date</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!--add delivery date to invoice grid table-->
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Invoice\Grid" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="delivery_date" xsi:type="string">sales_invoice.delivery_date</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!--add delivery date to shipment grid table-->
+    <virtualType name="ShipmentGridAggregator" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="delivery_date" xsi:type="string">sales_shipment.delivery_date</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!--add delivery date to creditmemo grid table-->
+    <virtualType name="CreditmemoGridAggregator" type="Magento\Sales\Model\ResourceModel\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="delivery_date" xsi:type="string">sales_creditmemo.delivery_date</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <!--save delivery date to invoice table by using plugin-->
+   <!--  <type name="Magento\Sales\Model\Service\InvoiceService">
+        <plugin name="add-delivery-date-field-to-invoice" type="Magebase\Deliverydate\Model\Service\InvoiceService\Plugin" sortOrder="12" />
+    </type> -->
+
+    <preference for="Magento\Sales\Model\Service\InvoiceService" type="Magebase\Deliverydate\Model\Service\InvoiceService"  />
+    <!--save delivery date to shipment table by using preference-->
+    <preference for="Magento\Shipping\Controller\Adminhtml\Order\Shipment\Save" type="Magebase\Deliverydate\Controller\Adminhtml\Order\Shipment\Save" />
+    <!--save delivery date to creditmemo table by using preference-->
+    <preference for="Magento\Sales\Controller\Adminhtml\Order\Creditmemo\Save" type="Magebase\Deliverydate\Controller\Adminhtml\Order\Creditmemo\Save" />
+    <!--add delivery date to invoice print page  by using preference-->
+    <preference for="Magento\Sales\Model\Order\Pdf\Invoice" type="Magebase\Deliverydate\Model\Order\Pdf\Invoice" />
+    <!--add delivery date to shipment print page by using preferencen-->
+    <preference for="Magento\Sales\Model\Order\Pdf\Shipment" type="Magebase\Deliverydate\Model\Order\Pdf\Shipment" />
+    <!--add delivery date to shipment print page by using preferencen-->
+    <preference for="Magento\Sales\Model\Order\Pdf\Creditmemo" type="Magebase\Deliverydate\Model\Order\Pdf\Creditmemo" />
+</config>

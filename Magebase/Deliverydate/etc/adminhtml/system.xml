@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+  ~  Magebase
+  ~
+  ~  @category    Magebase
+  ~  @package     Magebase_Deliverydate
+  ~  @author      Tom Lin <tom@lero9.co.nz>
+  ~  @copyright   Copyright (c) 2016 Magebase. (http://magebase.com)
+  -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:
+Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="delivery" translate="label" sortOrder="400">
+            <label>Delivery Date</label>
+        </tab>
+        <section id="delivery_date" translate="label" type="text" sortOrder="110" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>General Setting</label>
+            <tab>delivery</tab>
+            <resource>Magebase_Delivertdate::config_deliverydate</resource>
+            <group id="general" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Delivery Date Setting</label>
+                <field id="deliverydate" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Delivery Date</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable and disable delivery date</comment>
+                </field>
+                <field id="allow_weekend" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Weekend</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                     <comment>Weekend days are specified under Configuration > General Setting > Allow Weekend.</comment>
+                </field>
+                <!-- <field id="format_date" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delivery Date Format</label>
+                    <source_model>Magebase\Deliverydate\Model\Source\Deliverydate</source_model>
+                    <comment>Weekend days are specified under Configuration >  General Setting > Delivery Date Format.</comment>
+                </field> -->
+            </group>
+        </section>
+    </system>
+</config>

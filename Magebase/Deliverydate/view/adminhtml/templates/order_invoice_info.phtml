@@ -1,0 +1,13 @@
+<div id="delivery-date-invoice">
+    <strong><?php echo __('Delivery Date') ?></strong>
+    <span class="price"><?=$block->getDeliveryDate() ?></span>
+</div>
+<script type="text/javascript">
+    require(
+        ['jquery'],
+        function($) {
+            var element = $('#delivery-date-invoice').detach();
+            $('.order-shipping-address').eq(1).append(element);
+        }
+    );
+</script>
